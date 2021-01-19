@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Prediction</title>
+    </head>
+    <body>
+
+        <div>
+            <h1 class="title"> 
+                <p>Bienvenue dans le classifieur de synopsis !</p> 
+            </h1>
+        </div>
+        <div class="container">
+            <form action="{{ url_for('result')}}" method="POST">
+                <p>Veuillez saisir votre synopsis ici </p>
+                <div class="send-box">
+                    <textarea class="text_area" name="message" rows="4" cols="50" required></textarea>
+                    <button type="submit" class="sendbtn"> Prédire </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

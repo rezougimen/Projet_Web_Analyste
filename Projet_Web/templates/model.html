@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Classification</title>
+    </head>
+    <body>
+        <div>
+            <h1 class="title"> 
+                <p>Bienvenue dans le classifieur de synopsis !</p> 
+            </h1>
+        </div>
+        
+        <div class="container">
+            <br/>
+            <div>
+                <img src="./static/images/clf.png" alt="Chart" height="250" width="560" class="center">
+            </div>
+            <form action="{{ url_for('training')}}" method="POST">
+                <p style="text-align: center;"> Notre modele de classification est généré à l'aide de l'algorithme naive bayes (Multinomial Naive Bayes algorithm)</p>
+                <br/>
+                <button type="submit" class="registerbtn"> Apprentissage </button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Prediction</title>
+    </head>
+    <body>
+        <div>
+            <h1 class="title"> 
+                <p>Bienvenue dans le classifieur de synopsis !</p> 
+            </h1>
+        </div>
+        
+        <div class="container">
+            <div>
+                <h2 class="title"><p>Résultats de la classification</p></h2>
+                <br/>
+				<div class="results center">
+	
+					{% if prediction[0] == 'action'%}
+					<h2 style="color:red;"> Action</h2>
+					{% elif prediction[0] == 'horror'%}
+					<h2 style="color:black;">Horror</h2>
+					{% elif prediction[0] == 'romance'%}
+					<h2 style="color:palevioletred;"> Romance</h2>
+					{% endif %}
+				
+				</div>
+            </div>
+            <form action="{{ url_for('predict')}}" method="GET">
+                <br/>
+                <button type="submit" class="registerbtn"> Prédiction </button>
+            </form>
+        </div>
+    </body>
+</html>
+
+

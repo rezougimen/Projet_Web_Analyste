@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Prediction</title>
+    </head>
+    <body>
+        <div>
+            <h1 class="title"> 
+                <p>Bienvenue dans le classifieur de synopsis !</p> 
+            </h1>
+        </div>
+        
+        <div class="container">
+            <div>
+                <h2 class="title"><p>Résultats de l'apprentissage</p></h2>
+                <br/>
+                <img src="{{ url }}" alt="Chart" height="320" width="600" class="center">
+            </div>
+            <form action="{{ url_for('predict')}}" method="GET">
+                <br/>
+                <button type="submit" class="registerbtn"> Prédiction </button>
+            </form>
+        </div>
+    </body>
+</html>
+
+
