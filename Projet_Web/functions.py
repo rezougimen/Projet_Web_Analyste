@@ -15,6 +15,8 @@ stop_words = stopwords.words('english')
 # Prétraitement des données 
 
 def clean_data(text):
+    # supprimer tous les caractères spéciaux
+    text = re.sub(r'\W', ' ', text)
     # supprimer les caractères uniques
     text = re.sub(r'\s+[a-zA-Z]\s+', ' ', text) 
     # supprimer les caractères uniques du début
